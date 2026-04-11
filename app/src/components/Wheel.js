@@ -96,7 +96,7 @@ export default function GameWheel() {
       <div className="relative">
         <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-emerald-400 text-4xl z-20">▼</div>
         <div
-          className="w-150 h-150 rounded-full border-[12px] border-stone-800 relative overflow-hidden transition-transform duration-[3s] ease-[cubic-bezier(0.2,0.8,0.2,1)]"
+          className="w-72 h-72 md:w-150 md:h-150 rounded-full border-[8px] md:border-[12px] border-stone-800 relative overflow-hidden transition-transform duration-[3s] ease-[cubic-bezier(0.2,0.8,0.2,1)]"
           style={{
             transform: `rotate(${rotation}deg)`,
             background: `conic-gradient(${sectors.map((s, i) => `${s.color} ${i * (360 / sectors.length)}deg ${(i + 1) * (360 / sectors.length)}deg`).join(', ')})`,
