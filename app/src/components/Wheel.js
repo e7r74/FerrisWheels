@@ -67,9 +67,23 @@ export default function GameWheel() {
     setTimeout(() => {
       const selectedSector = sectors[prizeIndex]
       const list = questions[selectedSector.p]
-      const q = list?.length > 0 ? list[Math.floor(Math.random() * list.length)] : 'В этой категории пусто!'
 
-      setCurrentQuestion({ category: selectedSector.name, question: q })
+      if (list?.length > 0) {
+        // 1. Выбираем случайный индекс вопроса
+        const randomIndex = Math.floor(Math.random() * list.length)
+        const q = list[randomIndex]
+
+        // 2. УДАЛЯЕМ выбранный вопрос из списка
+        setQuestions((prev) => ({
+          ...prev,
+          [selectedSector.p]: prev[selectedSector.p].filter((_, i) => i !== randomIndex),
+        }))
+
+        setCurrentQuestion({ category: selectedSector.name, question: q })
+      } else {
+        setCurrentQuestion({ category: selectedSector.name, question: 'В этой категории вопросы закончились!' })
+      }
+
       setIsSpinning(false)
       setShowModal(true)
     }, 3000)
