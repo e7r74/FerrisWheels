@@ -9,7 +9,7 @@ const sectors = [
   { p: 'П', name: 'Природа', color: '#cda4a5' }, // фиолетовый
   { p: 'Б', name: 'Блиц', color: '#fdba74' }, // оранжевый
   { p: 'Н', name: 'Номенклатура', color: '#7dd3fc' }, // голубой
-  { p: 'Ф', name: 'Флаг', color: '#c4b5fd' }, // красный
+  // { p: 'Ф', name: 'Флаг', color: '#c4b5fd' }, // красный
 ]
 
 export default function GameWheel() {
